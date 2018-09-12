@@ -1,3 +1,80 @@
+Your submission was recorded at 2018-09-12 12:59:13 +0000 : submission is on time.
+Score: 302/308
+
+App
+  should respond to simple request [0 points]
+
+Table header
+  should have link to sort by title [10 points]
+  should have link to sort by release date [10 points]
+
+Table
+  should be sortable by title [20 points]
+  should be sortable by release date [20 points]
+  should highlight title header when sorted [20 points]
+  should highlight release date header when sorted [20 points]
+
+GET /movies
+  should be successful
+  should have #ratings_form form [5 points]
+  should have #ratings_submit button [5 points] (FAILED - 1)
+  should have checkboxes [5 points]
+  When I first visit the page
+    should have all checkboxes checked  [8 points]
+    should have movies visible [7 points]
+  when selecting a movie rating
+    should only display movies of that rating [20 points]
+    should automatically check the selected rating in the response [25 points]
+  when selecting a sort column
+    should preserve the ratings filter [25 points]
+
+GET /movies
+  basic tests
+    should be successful
+    should have a form with id ratings_form
+    should have #ratings_submit button (FAILED - 2)
+    should have checkboxes
+    should have #movies
+    should have #title_header
+    should have #release_date_header
+  when selecting a movie rating
+    should remember the rating selected [20 points]
+    should allow new ratings to be selected [15 points]
+    should redirect to a RESTful route [15 points]
+  when selecting a sort field
+    should remember the sort order [20 points]
+    should allow a new sort order to be selected [15 points]
+    should redirect to a RESTful route [15 points]
+
+Failures:
+
+  1) GET /movies should have #ratings_submit button [5 points]
+     Failure/Error: expect(@page.form_with(:id => 'ratings_form').button_with(:id => 'ratings_submit')).not_to equal(nil)
+
+       expected not # => nil
+                got # => nil
+
+       Compared using equal?, which compares object identity.
+
+  2) GET /movies basic tests should have #ratings_submit button
+     Failure/Error: expect(@page.form_with(:id =>'ratings_form').button_with(:id => 'ratings_submit')).not_to equal(nil)
+
+       expected not # => nil
+                got # => nil
+
+       Compared using equal?, which compares object identity.
+
+Finished in 7 seconds (files took 20001 minutes 23 seconds to load)
+29 examples, 2 failures
+
+Failed examples:
+
+rspec ./your_code.rb:175 # GET /movies should have #ratings_submit button [5 points]
+rspec ./your_code.rb:401 # GET /movies basic tests should have #ratings_submit button
+
+
+
+
 Your submission was recorded at 2018-09-12 11:08:20 +0000 : submission is on time.
 Score: 257/308
 
